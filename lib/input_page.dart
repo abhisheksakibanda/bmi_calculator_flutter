@@ -130,6 +130,17 @@ class _InputPageState extends State<InputPage> {
             ),
           ),
           Container(
+            child: TextButton(
+              child: Text(
+                'CALCULATE YOUR BMI',
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 20.0,
+                  letterSpacing: 2.0,
+                ),
+              ),
+              onPressed: () {},
+            ),
             color: kBottomContainerColor,
             margin: EdgeInsets.only(top: 10.0),
             height: kBottomContainerHeight,
