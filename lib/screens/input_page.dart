@@ -203,6 +203,7 @@ class _InputPageState extends State<InputPage> {
                     bmiResult: calculatorBrain.calculateBMI(),
                     resultText: calculatorBrain.getResult(),
                     interpretation: calculatorBrain.getInterpretation(),
+                    resultTextColor: calculatorBrain.getResultTextColor(),
                   ),
                 ),
               );

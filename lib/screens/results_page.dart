@@ -7,11 +7,13 @@ class ResultsPage extends StatelessWidget {
   final String bmiResult;
   final String resultText;
   final String interpretation;
+  final Color resultTextColor;
 
   ResultsPage({
     required this.bmiResult,
     required this.resultText,
     required this.interpretation,
+    required this.resultTextColor,
   });
 
   @override
@@ -43,16 +45,36 @@ class ResultsPage extends StatelessWidget {
                 children: [
                   Text(
                     resultText.toUpperCase(),
-                    style: kResultsTextStyle,
+                    style: TextStyle(
+                      color: resultTextColor,
+                      fontSize: 22.0,
+                      fontWeight: FontWeight.bold,
+                    ),
                   ),
                   Text(
                     bmiResult,
                     style: kBMITextStyle,
                   ),
-                  Text(
-                    interpretation,
-                    style: kBodyTextStyle,
-                    textAlign: TextAlign.center,
+                  Column(
+                    children: [
+                      Text(
+                        'Normal BMI range:',
+                        style: kLabelTextStyle,
+                      ),
+                      SizedBox(height: 10.0),
+                      Text(
+                        '18.5 - 25 kg/m\u00B2',
+                        style: kBodyTextStyle,
+                      ),
+                    ],
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 30.0),
+                    child: Text(
+                      interpretation,
+                      style: kBodyTextStyle,
+                      textAlign: TextAlign.center,
+                    ),
                   ),
                 ],
               ),
